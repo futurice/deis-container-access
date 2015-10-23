@@ -1,0 +1,3 @@
+DCA_CONTAINER=${DCA:=dca}
+DCA_APP="https://${DCA_CONTAINER}.deiscluster.dev"
+OBIN="/opt/bin/"

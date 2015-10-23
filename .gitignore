@@ -1,0 +1,6 @@
+*.pyc
+host/dca
+host/dca.pub
+host/settings.sh
+static/*
+tags

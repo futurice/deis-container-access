@@ -1,0 +1,6 @@
+[Unit]
+Description=DCA
+
+[Service]
+Type=simple
+ExecStart=/opt/bin/send.sh

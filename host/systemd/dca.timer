@@ -1,0 +1,10 @@
+[Unit]
+Description=DCA Info
+
+[Timer]
+OnUnitActiveSec=60
+OnBootSec=1min
+Unit=dca.service
+
+[Install]
+WantedBy=multi-user.target
