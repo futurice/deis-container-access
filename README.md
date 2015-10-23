@@ -44,5 +44,5 @@ $ git push deis master
 Access a container in Deis
 
 ```
-$ ssh -t dca@DEISCTL -p 222 containerId
+$ ssh -p 222 -t -i dca dca@DEISCTL containerId
 ```
