@@ -31,8 +31,6 @@ RUN chown -R app /opt/app
 
 USER app
 
-COPY index.html /opt/app/index.html
-COPY index.txt /opt/app/index.txt
 COPY app.py /opt/app/app.py
 
 EXPOSE 8000
