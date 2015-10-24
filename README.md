@@ -1,7 +1,7 @@
 
 # Deis Container Access
 
-Configure the [Deis](http://deis.io/) cluster to be able to access its containers as App developer.
+Configure the [Deis](http://deis.io/) cluster and let developers access its containers via SSH.
 
 # What?
 
