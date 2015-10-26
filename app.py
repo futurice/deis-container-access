@@ -30,11 +30,28 @@ def deis(data):
         c[ip][name] = crow[0]
     return c
 
-@app.route('/')
-def index():
+def list_containers():
     c = {}
     for f in get_files_in(STATIC_DIR):
         c.update(deis(open(f).read()))
+    return c
+
+@app.route('/a/<name>')
+def app_shorthand(name):
+    cmd = "-A -t -p {port} {user}@{ip} {token}"
+    for ip, apps in list_containers().iteritems():
+        match = apps.get(name, None)
+        if match:
+            cmd = cmd.format(ip=ip,
+                    token=match,
+                    user=os.getenv('APP_USER', 'dca'),
+                    port=os.getenv('APP_PORT', 222),)
+            break
+    return Response(cmd)
+
+@app.route('/')
+def index():
+    c = list_containers()
     return Response(json.dumps(c), content_type="application/json")
 
 @app.route('/clear', methods=["POST"])

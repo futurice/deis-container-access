@@ -46,3 +46,20 @@ Access a container in Deis
 ```
 $ ssh -p 222 -t -i dca dca@DEISCTL containerId
 ```
+
+## shorthand
+
+Add dca RSA key for authentication agent:
+```bash
+ssh-add dcaKey
+```
+
+Modify eg. ~/.bashrc to contain an alias for SSH attributes:
+```
+function dcafn() {
+    ssh $(curl -s http://dca.deis/a/$1)
+}
+alias dca=dcafn
+```
+
+Then `dca <appname>` and you're in.
