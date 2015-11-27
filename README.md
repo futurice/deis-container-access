@@ -28,7 +28,7 @@ Current version is meant for trusted environments.
 $ cd host/
 $ cp settings.sh.template settings.sh
 $ # configure settings.sh to fit your environment
-$ KEY="~/.ssh/deis" HOST="core@DEISCTL" bash install.sh
+$ DEISCTL="<IP>" KEY=~/.ssh/deis HOST="core@$DEISCTL" bash install.sh
 ```
 
 2. Open port 222 on your firewall (eg. AWS Security Group).
